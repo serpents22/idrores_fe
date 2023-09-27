@@ -1,0 +1,31 @@
+{
+  "impianto" : [
+    {
+      "name" : "Minifert",
+      "id" : 1,
+      "macAddress" : "mac:asf3514rfd:3redsg",
+      "version" : "2.0",
+      "progAttivi" : 10,
+      "stAttivi" : 4,
+      "portata" : 3
+    },
+    {
+      "name" : "MiniCoop",
+      "id" : 2,
+      "macAddress" : "mac:asf3514rfd:3redsg",
+      "version" : "2.0",
+      "progAttivi" : 10,
+      "stAttivi" : 4,
+      "portata" : 3
+    },
+    {
+      "name" : "Idrosat",
+      "id" : 3,
+      "macAddress" : "mac:asf3514rfd:3redsg",
+      "version" : "2.0",
+      "progAttivi" : 10,
+      "stAttivi" : 4,
+      "portata" : 3
+    }
+  ]
+}

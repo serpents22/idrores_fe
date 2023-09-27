@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer my-custom-styles {
+
+      .custom-mobile{
+        display:initial;
+      }
+
+      .device-container img {
+        width: unset !important;
+      }
+      
+      @media (min-width: 390px) and (max-width: 992px) {
+        .mlw-30{
+          width: initial !important;
+          padding: 0.5rem !important;
+        }
+
+        .search-bar {
+          width: 100% !important;
+        }
+        .w-30{
+           width: 50% !important;
+        }
+
+        /* .label-bar{
+          width:70% !important;
+        } */
+
+        .table-container th,
+        .table-container td {
+          font-size: .2rem !important;
+        }
+      }
+
+      @media (max-width: 992px) {
+       .custom-mobile{
+          display:none ;
+        }
+
+        .dashboard-container .custom-mobile{
+          display:block !important ;
+        }
+
+        .table-container th,
+        .table-container td {
+          font-size: .4rem !important;
+        }
+      }
+
+      @media (max-width: 1180px) {
+        .custom-mobile{
+           display:none ;
+        }
+ 
+        .dashboard-container .custom-mobile{
+           display:block !important ;
+        }
+
+
+        /* .durata-container {
+          padding-left: 4rem !important; 
+          padding-right: 4rem !important;
+        } */
+
+        .mlw-30{
+          width: initial !important;
+          padding: 0.5rem !important;
+        }
+
+        .table-container th,
+        .table-container td {
+          font-size: .9rem !important;
+        }
+      }
+
+      @media (max-width: 1024px) {
+        .custom-mobile{
+           display:none ;
+        }
+ 
+        .dashboard-container .custom-mobile{
+           display:block !important ;
+        }
+ 
+/* 
+        .durata-container {
+          padding-left: 4rem !important; 
+          padding-right: 4rem !important;
+        } */
+
+        .mlw-30{
+          width: initial !important;
+          padding: 0.5rem !important;
+        }
+
+        .table-container th,
+        .table-container td {
+          font-size: .9rem !important;
+        }
+      }
+  }
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');

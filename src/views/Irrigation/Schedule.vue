@@ -1,0 +1,150 @@
+<template>
+  <sidebar 
+    :noSocial="true" 
+    :backOn="true" 
+    />
+  <div class="device-container">
+    <deviceCard 
+      :small=true
+      :content="newData" />
+    <div class="xs-icon-card">
+      <img src="@/assets/programma_irrigazione.png">
+      <p>{{ $t('irrigationSetting') }}</p>
+    </div>
+  </div>
+  <div class="dashboard-container">
+    <IdroTitle :title="title"/>
+    <div class="content">
+      <div class="row">
+        <div class="sm-icon-card" v-if="devicesStore.deviceData.role !== 'user'">
+          <router-link  :to="{ name: 'Programma' }" >
+            <img src="@/assets/programma_partenze.png">
+          </router-link>
+          <p>{{ $t('scheduleStart') }}</p>
+        </div>
+        <div class="sm-icon-card opacity-40" v-else>
+          <img src="@/assets/programma_partenze.png" >
+          <p>{{ $t('scheduleStart') }}</p>
+        </div>
+        <div class="sm-icon-card">
+          <router-link :to="{ name: 'Avvio' }">
+            <img src="@/assets/avvio_manuale.png">
+          </router-link>
+          <p>{{ $t('manualStart') }}</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="sm-icon-card" v-if="devicesStore.deviceData.role !== 'user'">
+          <router-link  :to="{ name: 'Parametri' }" >
+            <img src="@/assets/parametri_generali.png">
+          </router-link>
+          <p>{{ $t('generalParameter') }}</p>
+        </div>
+        <div class="sm-icon-card opacity-40" v-else>
+          <img src="@/assets/parametri_generali.png">
+          <p>{{ $t('generalParameter') }}</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="sm-icon-card" v-if="devicesStore.deviceData.role !== 'user'">
+          <router-link  :to="{ name: 'DurataStazione' }" >
+            <img src="@/assets/durata_stazioni.png">
+          </router-link>
+          <p>{{ $t('stationTimes') }}</p>
+        </div>
+        <div class="sm-icon-card opacity-40" v-else>
+          <img src="@/assets/durata_stazioni.png" >
+          <p>{{ $t('stationTimes') }}</p>
+        </div>
+        <div class="sm-icon-card" v-if="devicesStore.deviceData.role !== 'user'">
+          <router-link  :to="{ name: 'GestisciSensori' }" >
+            <img src="@/assets/gestisci_sensori.png">
+          </router-link>
+          <p>{{ $t('sensorsManagement') }}</p>
+        </div>
+        <div class="sm-icon-card opacity-40" v-else>
+          <img src="@/assets/gestisci_sensori.png" >
+          <p>{{ $t('sensorsManagement') }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script setup>
+  import { useDevicesStore } from '@/stores/DevicesStore'
+  import { storeToRefs } from 'pinia'
+  import { defineAsyncComponent,  computed,  onMounted,  ref } from '@vue/runtime-core'
+
+  //props
+  const props = defineProps({
+    id: String
+  })
+
+  const title = ref()
+
+  //asynchronus component
+  const deviceCard = defineAsyncComponent(
+    () => import('@/components/cards/deviceCard.vue'),
+  )
+  //state
+  const devicesStore = useDevicesStore()
+  const { isLoading } = storeToRefs(useDevicesStore())
+  const newData = computed(() => {
+      return [devicesStore.deviceData]
+    })
+
+  onMounted( async () => {
+    await devicesStore.loadDevice(props.id)
+    title.value = 'Idrosat:' + devicesStore.deviceData.name
+  })
+
+
+</script>
+
+<style scoped>
+.dashboard-container {
+  @apply flex flex-col w-full justify-center items-center
+}
+
+.device-container {
+  @apply 
+    flex sm:flex-col fixed items-end sm:items-center gap-2
+    bottom-0 left-4
+    pb-4 sm:pb-8
+}
+
+.content {
+  @apply 
+    flex justify-center items-center
+    gap-[20px]
+    lg:gap-[30px]
+    xl:gap-[40px]
+    2xl:gap-[80px]
+    transition-all ease-in-out duration-300
+}
+
+
+.row {
+  @apply
+    flex flex-col relative justify-center
+    gap-[60px]
+    md:gap-[20px]
+    lg:gap-[40px]
+    xl:gap-[80px]
+    transition-all ease-in-out duration-300
+}
+
+
+span h1 {
+  @apply sm:text-3xl text-xl text-[#353535] font-medium
+}
+
+span h2 {
+  @apply text-xs font-light
+}
+
+span p {
+  @apply text-base font-normal
+}
+</style>
