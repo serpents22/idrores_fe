@@ -55,7 +55,7 @@ import Webcam from '@/views/Webcam/Webcam.vue'
 
 
 const routes = [
-  { path: '/:lang', name: 'Home', component: Home, meta: { requiresAuth:false, title: 'Idrolife - Home' } },
+  { path: '/:lang', name: 'Home', component: Home, meta: { requiresAuth:false, title: 'Idrores - Home' } },
   { path: '/:lang/password-reset', name: 'ResetPassword', component: ResetPassword, meta: { requiresAuth:false } },
   { path: '/:lang/login', name: 'LoginForm', component: LoginForm, meta: { requiresAuth:false } },
   { path: '/:lang/register', name: 'RegisterForm', component: RegisterForm, meta: { freeAccess:true } },
