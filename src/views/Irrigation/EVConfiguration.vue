@@ -223,7 +223,7 @@
     postEVConData.value.payload['S' + (evIndex+factor)] = 'FFFFFF'
     postEVConData.value.payload['S' + (groupIndex+factor)] = '0'
     await dataStore.postControl(devicesStore.deviceData.code,postEVConData.value)
-    getEV()
+    await getEV()
   }
 
   async function registerEV() {
@@ -235,7 +235,7 @@
     postEVConData.value.payload['S' + (evIndex+factor)] = registerEVData.value.serial
     postEVConData.value.payload['S' + (groupIndex+factor)] = registerEVData.value.group.toString()
     await dataStore.postControl(devicesStore.deviceData.code,postEVConData.value)
-    getEV()
+    await getEV()
   }
 
   function groupingTableData() {
