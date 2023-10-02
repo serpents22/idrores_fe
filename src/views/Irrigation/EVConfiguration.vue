@@ -207,17 +207,24 @@
     console.log(emptyData.value)
   }
 
-  function deleteEV(value) {
+  async function getEV() {
+    await dataStore.getLastEvConfig(evConfigParams.value)    
+    fillTableData()
+    groupingTableData()
+  }
+
+  async function deleteEV(value) {
     postEVConData.value.payload = {}
     let evIndex = 2000
     let groupIndex = 2002
     let factor = 6 * value.id
     postEVConData.value.payload['S' + (evIndex+factor)] = 'FFFFFF'
     postEVConData.value.payload['S' + (groupIndex+factor)] = '0'
-    dataStore.postControl(devicesStore.deviceData.code,postEVConData.value)
+    await dataStore.postControl(devicesStore.deviceData.code,postEVConData.value)
+    getEV()
   }
 
-  function registerEV() {
+  async function registerEV() {
     console.log(registerEVData.value)
     postEVConData.value.payload = {}
     let evIndex = 2000
@@ -225,9 +232,10 @@
     let factor = 6 * registerEVData.value.stationNumber
     postEVConData.value.payload['S' + (evIndex+factor)] = registerEVData.value.serial
     postEVConData.value.payload['S' + (groupIndex+factor)] = registerEVData.value.group.toString()
-    dataStore.postControl(devicesStore.deviceData.code,postEVConData.value)
+    await dataStore.postControl(devicesStore.deviceData.code,postEVConData.value)
+    getEV()
   }
-  
+
   function groupingTableData() {
     groupedTableData.value = tableData.value.reduce((r, a) => {
       r[a.stazione] = [...r[a.stazione] || [], a];
