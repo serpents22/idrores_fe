@@ -15,9 +15,7 @@
           <Tab :tabs="tabs" @clicked= "chageLanguage" />
         </div>
         <h2 class="col-span-2 text-[8px] sm:text-base">Idrobit srl - Via Giuseppe Garibaldi, 85, 00012 Villanova di Guidonia - © Idrobit srl 2023</h2>
-        <div class="w-2 h-2">
-
-        </div>
+        <a href="/privacy-policy.pdf" class="col-span-1 text-[8px] sm:text-base">Privacy Policy</a>
       </footer>
   </div>
 
