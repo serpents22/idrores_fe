@@ -173,8 +173,8 @@
   function fillTableData() {
     let evIndex = 2000    
     let i = 0
-    tableData = []
-    emptyData = []
+    tableData.value = []
+    emptyData.value = []
     for (let iFor = 0; iFor < dataStore.evConfigLength / 5; iFor++) {
       if (dataStore.evConfig.hasOwnProperty('S' + evIndex)) {
         if (dataStore.evConfig['S' + evIndex] !== "FFFFFF") {
