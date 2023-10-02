@@ -50,7 +50,7 @@
     "setTimeData":"Set Time Data",
     "stationManagement":"Stations Management",
     "scheduleStart":"Schedule Starts",
-    "s":"Stations timetable",
+    "stationTime":"Stations timetable",
     "manualStart":"Manual Start",
     "generalParameter":"General Parameters",
     "sensorsManagement":"Sensors management",
@@ -279,5 +279,6 @@
     "emergencyKey": "Emergency key",
     "noAlarm": "No Alarm",
     "flushing": "Flushing",
-    "prewash": "Prewash"
+    "prewash": "Prewash",
+    "evConfiguration": "EV Configuration"
 }

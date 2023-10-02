@@ -279,5 +279,6 @@
     "emergenciKei": "Ključ za hitne slučajeve",
     "noAlarm":"Nema alarma",
     "flushing": "Ispiranje",
-    "prewash": "Pretpranje"
+    "prewash": "Pretpranje",
+    "evConfiguration": "EV Configuration"
 }
