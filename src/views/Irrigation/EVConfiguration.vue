@@ -223,7 +223,7 @@
     postEVConData.value.payload['S' + (evIndex+factor)] = 'FFFFFF'
     postEVConData.value.payload['S' + (groupIndex+factor)] = '0'
     await dataStore.postControl(devicesStore.deviceData.code,postEVConData.value)
-    await getEV()
+    setTimeout(() => { getEV() }, 2000)
   }
 
   async function registerEV() {
@@ -231,11 +231,11 @@
     postEVConData.value.payload = {}
     let evIndex = 2000
     let groupIndex = 2002
-    let factor = 6 * registerEVData.value.stationNumber
+    let factor = 6 * (registerEVData.value.stationNumber - 1)
     postEVConData.value.payload['S' + (evIndex+factor)] = registerEVData.value.serial
     postEVConData.value.payload['S' + (groupIndex+factor)] = registerEVData.value.group.toString()
     await dataStore.postControl(devicesStore.deviceData.code,postEVConData.value)
-    await getEV()
+    setTimeout(() => { getEV() }, 2000)
   }
 
   function groupingTableData() {
