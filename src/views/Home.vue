@@ -15,7 +15,7 @@
           <Tab :tabs="tabs" @clicked= "chageLanguage" />
         </div>
         <h2 class="col-span-2 text-[8px] sm:text-base">Idrobit srl - Via Giuseppe Garibaldi, 85, 00012 Villanova di Guidonia - © Idrobit srl 2023</h2>
-        <a :href="privacyPolicy" target="_blank" class="col-span-1 text-[8px] sm:text-base">Privacy Policy</a>
+        <a href="resources/privacy-policy.pdf" target="_blank" class="col-span-1 text-[8px] sm:text-base">Privacy Policy</a>
       </footer>
   </div>
 
@@ -33,7 +33,6 @@ export default {
     Tab
   },
   setup() {
-    const privacyPolicy = process.env.VUE_APP_URL + 'privacy-policy.pdf'
     const localeStore = useLocaleStore()
     const route = useRoute();
     const router = useRouter();
@@ -60,7 +59,7 @@ export default {
       })
 
       return {
-        tabs,route, router, localeStore,privacyPolicy
+        tabs,route, router, localeStore
       }
   },
   methods: {
