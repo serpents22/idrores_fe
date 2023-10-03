@@ -33,7 +33,7 @@ export default {
     Tab
   },
   setup() {
-    const privacyPolicy = process.env.VUE_APP_BASE_URL + 'resources/privacy-policy.pdf'
+    const privacyPolicy = process.env.VUE_APP_API_URL + 'resources/privacy-policy.pdf'
     const localeStore = useLocaleStore()
     const route = useRoute();
     const router = useRouter();
