@@ -156,7 +156,7 @@
       newObj.direzione2 = dataStore.meteoStat.hasOwnProperty('M8') ? dataStore.meteoStat.M8 : '-',
       newObj.segnalesim = dataStore.meteoStat.hasOwnProperty('M12') ? dataStore.meteoStat.M12 : '-',
       newObj.umiditaria = dataStore.meteoStat.hasOwnProperty('M5') ? dataStore.meteoStat.M5 : '-',
-      newObj.lavaggio = dataStore.meteoStat.hasOwnProperty('M23') ? dataStore.meteoStat.M23 : '-'
+      newObj.lavaggio = dataStore.meteoStat.hasOwnProperty('M32') ? dataStore.meteoStat.M32 : '-'
     } else {
       newObj.radiazione = '-',
       newObj.temperatura = '-',
