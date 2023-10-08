@@ -132,7 +132,7 @@
 
   //data params
   const meteoParams = ref({
-    fields: 'M7,M6,M4,M8,M31,M12,M33,M32,M5',
+    fields: 'M7,M6,M4,M8,M31,M12,M23,M32,M5',
     measurement: 'METEOSTAT',
     device_code: null
   })
@@ -156,7 +156,7 @@
       newObj.direzione2 = dataStore.meteoStat.hasOwnProperty('M8') ? dataStore.meteoStat.M8 : '-',
       newObj.segnalesim = dataStore.meteoStat.hasOwnProperty('M12') ? dataStore.meteoStat.M12 : '-',
       newObj.umiditaria = dataStore.meteoStat.hasOwnProperty('M5') ? dataStore.meteoStat.M5 : '-',
-      newObj.lavaggio = dataStore.meteoStat.hasOwnProperty('M33') ? dataStore.meteoStat.M33 : '-'
+      newObj.lavaggio = dataStore.meteoStat.hasOwnProperty('M23') ? dataStore.meteoStat.M23 : '-'
     } else {
       newObj.radiazione = '-',
       newObj.temperatura = '-',

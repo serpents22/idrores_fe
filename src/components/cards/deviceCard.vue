@@ -92,7 +92,7 @@ export default {
         this.meteoStatParams.device_code = device.code
         await this.dataStore.getLastMeteoStat(this.meteoStatParams)
         if (this.dataStore.meteoStat !== undefined) { 
-          this.content[index].systemPressure = this.dataStore.meteoStat.M33
+          this.content[index].systemPressure = this.dataStore.meteoStat.M23
         } else {
           this.content[index].systemPressure = '-'
         }
@@ -144,7 +144,7 @@ export default {
       device_code: null
     })
     const meteoStatParams = ref({
-      fields: 'M33',
+      fields: 'M23',
       measurement: 'METEOSTAT',
       device_code: null
     })
