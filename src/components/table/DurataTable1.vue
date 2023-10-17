@@ -29,9 +29,9 @@
             <!--<th v-for="tHead in tableHeader" :key="tHead" :class="tHead">
               {{tHead}}
             </th>-->
-            <th name="Sposta" class="tHead">
+            <!-- <th name="Sposta" class="tHead">
               {{tableHeader[0]}}
-            </th>
+            </th> -->
             <th name="Ordine" class="tHead">
               {{tableHeader[1]}}
             </th>
@@ -59,14 +59,14 @@
             <th v-if="evFlowMode===0" name="Volume" class="tHead">
               {{tableHeader[9]}}
             </th>
-            <th name="Rimuovi Step" class="tHead">
+            <!-- <th name="Rimuovi Step" class="tHead">
               {{tableHeader[10]}}
-            </th>
+            </th> -->
           </tr>
         </thead>
         <tr v-for="(tData, index) in rowsData" :key="index" >
 
-          <td name="Sposta" class="w-10">
+          <!-- <td name="Sposta" class="w-10">
             <div class="mp-div">
               <div style="display:flex;flex-direction: row;align-items: center;margin-left:10px">
                 <button type="button" class="filled__blue"  @click="moveStep(index,0)" > 
@@ -77,7 +77,7 @@
                 </button>
               </div>
             </div>
-          </td>
+          </td> -->
 
           <td name="Ordine partenza" class="w-05">
             <label class="index" style="font-weight:bold;">{{ ndx }}</label> 
@@ -125,13 +125,13 @@
             <input type="number" v-model="tData.volume">
           </td>
 
-          <td name="Rimuovi step" class="w-10">
+          <!-- <td name="Rimuovi step" class="w-10">
             <div style="display:flex;flex-direction: row;align-items: center;margin-left:10px; justify-content: center;">
                 <button type="button"  @click="removeProgramStep(index)" > 
                   <img src="@/assets/cancella.png" style="max-width:32px">
                 </button>
             </div>
-          </td>
+          </td> -->
 
         </tr>
       </table>
@@ -747,10 +747,10 @@ const { t } = useI18n();
 
     for(step = 0; step < programSteps; step++){
       orderRegister='S' + (base_reg + Number( 200 + step));
-      // console.log(orderRegister, dataStore.evStation[orderRegister].split(','))
       let stationId = dataStore.evStation[orderRegister].split(',')[0];
+      let stationStatus = dataStore.evStation[orderRegister].split(',')[1];
       
-      if(stationId > 0){
+      if(stationId > 0 && stationStatus > 0){
         console.log(step)
         var flowMode=getFlowValueByStep(step);
         
