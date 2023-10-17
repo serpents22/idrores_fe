@@ -160,11 +160,12 @@ const {t} = useI18n()
     let stazioneActive
     let azioneStartAddress = 40100
     await dataStore.getLastSatStat(satStatParams.value)   
-    stazioneActive = dataStore.satStat === undefined ? 0 : dataStore.satStat.S18
+    stazioneActive = dataStore.satStat === undefined ? 0 : dataStore.satStat.S18.split(',')
+
     for (let i = 0; i < (stazioneList.value.length); i++) {
       let tmpStato = stazioneActive.includes(stazioneList.value[i]) ? true : false
-      
-      let tmpAzioneTempo = dataStore.satStat['S' + (azioneStartAddress + i)] === undefined ? undefined : dataStore.satStat['S' + (azioneStartAddress + i)].split(',')
+      // let tmpAzioneTempo = dataStore.satStat['S' + (azioneStartAddress + i)] === undefined ? undefined : dataStore.satStat['S' + (azioneStartAddress + i)].split(',')
+      let tmpAzioneTempo = dataStore.satStat['S' + (azioneStartAddress + parseInt(stazioneList.value[i])-1)].split(',')
       console.log(tmpAzioneTempo)
       let tmpAzione
       let tmpTempo

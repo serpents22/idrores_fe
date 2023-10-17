@@ -169,7 +169,7 @@ import { useI18n } from 'vue-i18n';
 const { t } = useI18n();
   
   let maxRows = 0;
-  let programSteps=96; // in teoria dovrebbero essere 95 ma c'è un bug nel firmware
+  let programSteps=48; // in teoria dovrebbero essere 95 ma c'è un bug nel firmware
   let programNumber=0;
   let base_reg=(10000+(programNumber * 1000));
   let workModeRegister='S' + (base_reg + 6);
@@ -222,7 +222,7 @@ const { t } = useI18n();
 
   //NB optionValue è il numero programma
   const optionValue = ref(1)
-  const tabs = ref([...Array(30)].map( (_, index) => index + 1 )); //MV questo mette il valore del tab min/sec ore/min volume
+  const tabs = ref([...Array(8)].map( (_, index) => index + 1 )); //MV questo mette il valore del tab min/sec ore/min volume
   //const rows = ref([...Array(maxRows)].map( (_, index) => index + 1 ));
   const rowsData = ref([]);
         rowsData.value=[];
@@ -255,7 +255,8 @@ const { t } = useI18n();
   })
 
   function updateStationStatus(index, station_status){
-    [...( rowsData.value[index-1]['station_status']=station_status )]
+    console.log('rows data',[...( rowsData.value[index-1]['station_status']=station_status )])
+    // [...( rowsData.value[index-1]['station_status']=station_status )]
   }
 
   function getProgramStepByGroupID(groupId, currentPos){
@@ -746,9 +747,11 @@ const { t } = useI18n();
 
     for(step = 0; step < programSteps; step++){
       orderRegister='S' + (base_reg + Number( 200 + step));
+      // console.log(orderRegister, dataStore.evStation[orderRegister].split(','))
       let stationId = dataStore.evStation[orderRegister].split(',')[0];
       
       if(stationId > 0){
+        console.log(step)
         var flowMode=getFlowValueByStep(step);
         
         var tmpGrpName=getGroupByStationId(stationId, Object.values(evData._rawValue))
@@ -768,6 +771,7 @@ const { t } = useI18n();
           tmfield: Object.keys(evStationTime.value)[step]
         }
         rowsData.value.push(oneitem);
+        console.log('row data', rowsData.value)
         swapGroups.push({group : tmpGrpName, station : stationId});
         lastStep++;
       }
