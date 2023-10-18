@@ -32,9 +32,9 @@
             <!-- <th name="Sposta" class="tHead">
               {{tableHeader[0]}}
             </th> -->
-            <th name="Ordine" class="tHead">
+            <!-- <th name="Ordine" class="tHead">
               {{tableHeader[1]}}
-            </th>
+            </th> -->
             <th  name="Stazione" class="tHead">
               {{tableHeader[2]}}
             </th>
@@ -79,9 +79,9 @@
             </div>
           </td> -->
 
-          <td name="Ordine partenza" class="w-05">
+          <!-- <td name="Ordine partenza" class="w-05">
             <label class="index" style="font-weight:bold;">{{ ndx }}</label> 
-          </td>
+          </td> -->
 
           <td :id="tData.prgStep" name="ID Stazione" class="w-05" style="text-align:left" :set="ndx = ndx + 1">
               <label style="font-weight:bold;">{{ Number(tData.stationID) }} </label>
@@ -89,11 +89,14 @@
 
           <td class="w-20" name="Gruppo" style="text-align:left">
             <!--<label style="font-weight:bold;">{{tData.grpName}}</label>-->
-            <select :value="tData.stationID" class="dropdown w-40" @change="moveOnSelect($event, index)" >
+            <!-- <select :value="tData.stationID" class="dropdown w-40" @change="moveOnSelect($event, index)" >
               <option v-for="groupObj in swapGroups" :value="groupObj.station">
                 {{ groupObj.group }}
               </option>
-            </select>
+            </select> -->
+            <div class="ev-list">
+              <label style="font-weight:bold;" >{{ tData.grpName }}</label>
+            </div>
           </td>
 
           <td class="w-10" name="Elettrovalvole">
@@ -137,7 +140,7 @@
       </table>
 
       <div class="button-bar">
-        <div class="w-50">
+        <!-- <div class="w-50">
           <div class="search-bar">
             <select v-model="evGroups[0].station" name="Gruppi" class="dropdown w-30" @change="updateSelectedGroup($event)" >
               <option selected v-for="groupObj in evGroups" :value="groupObj.station">
@@ -146,7 +149,7 @@
             </select>
             <button type="button" class="filled_green mp-button mlw-30" @click="addStep()">{{$t('addGroup')}}</button>
           </div>
-        </div>
+        </div> -->
         <div class="button-wrapper no-margin">
           <MyButton type="submit" class="filled"  :label="$t('save')" :loading="postControlIsLoading" />
         </div>
