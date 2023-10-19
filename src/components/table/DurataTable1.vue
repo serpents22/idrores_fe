@@ -773,8 +773,9 @@ const { t } = useI18n();
           prgStep: Object.keys(evStationValue.value)[step],
           tmfield: Object.keys(evStationTime.value)[step]
         }
-        rowsData.value.push(oneitem);
-        console.log('row data', rowsData.value)
+        if (oneitem.gruppiEv.length != 0) {
+          rowsData.value.push(oneitem);
+        }
         swapGroups.push({group : tmpGrpName, station : stationId});
         lastStep++;
       }
