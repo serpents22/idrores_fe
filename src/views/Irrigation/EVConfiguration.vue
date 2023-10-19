@@ -11,8 +11,8 @@
       :content="newData" 
       />
     <div class="xs-icon-card">
-      <img src="@/assets/impostazioni_generali.png">
-      <p>{{ $t('generalSetting') }}</p>
+      <img src="@/assets/config_ev.png">
+      <p>{{ $t('evConfiguration') }}</p>
     </div>
   </div>
   <div class="content">

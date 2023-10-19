@@ -280,5 +280,8 @@
     "noAlarm":"Nema alarma",
     "flushing": "Ispiranje",
     "prewash": "Pretpranje",
-    "evConfiguration": "EV Configuration"
+    "evConfiguration": "EV Configuration",
+    "repeaterConfiguration": "Repeater Configuration",
+    "repeaterNumber": "Repeater Number",
+    "repeaterCode": "Repeater Code"
 }

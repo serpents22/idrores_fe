@@ -3,7 +3,10 @@ import dataAPI from '@/services/dataAPI'
 import { ref } from 'vue'
 
 export const useDataStore = defineStore('data', () => {
-  const fertConfig = ref([])
+  const repeaterDataLength = ref()
+  const repeaterData = ref([])
+  const repeaterIsLoading = ref(false)
+  const fertConfig = ref([]) 
   const fertConfigIsLoading = ref(false)
   const pumpConfig = ref([])
   const pumpConfigIsLoading = ref(false)
@@ -110,6 +113,19 @@ export const useDataStore = defineStore('data', () => {
   } catch (err) {
       console.error(err)
       evConfigIsLoading.value = false
+      return err
+    } 
+  }
+  const getLastRepeater = async (params) => {
+      repeaterIsLoading.value = true
+    try {
+      const res = await dataAPI.getLast(params)
+      repeaterData.value = res.data.data
+      repeaterDataLength.value = res.data.data === undefined ? 0 : Object.keys(res.data.data).length - 6
+      repeaterIsLoading.value = false
+  } catch (err) {
+      console.error(err)
+      repeaterIsLoading.value = false
       return err
     } 
   }
@@ -274,6 +290,7 @@ export const useDataStore = defineStore('data', () => {
     satStarts, satStartsIsLoading, getLastSatStarts, satStartsLength,
     pumpConfig, pumpConfigIsLoading, getLastPumpConfig, pumpConfigLength,
     mvConfig, mvConfigIsLoading, getLastMvConfig, mvConfigLength,gropointStatIsLoading, gropointStatLength,
-    historicalData, historicalDataIsLoading, historicalDataLength, getHistoricalData, getLastGroupData, groupData, groupDataIsLoading
+    historicalData, historicalDataIsLoading, historicalDataLength, getHistoricalData, getLastGroupData, groupData, groupDataIsLoading,
+    repeaterData, repeaterDataLength, repeaterIsLoading, getLastRepeater
   }
 })

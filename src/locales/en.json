@@ -280,5 +280,8 @@
     "noAlarm": "No Alarm",
     "flushing": "Flushing",
     "prewash": "Prewash",
-    "evConfiguration": "EV Configuration"
+    "evConfiguration": "EV Configuration",
+    "repeaterConfiguration": "Repeater Configuration",
+    "repeaterNumber": "Repeater Number",
+    "repeaterCode": "Repeater Code"
 }

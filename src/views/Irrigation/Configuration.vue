@@ -32,10 +32,17 @@
           <router-link :to="{name: 'Stazioni'}"><img src="@/assets/programma_stazioni.png"></router-link>
           <p>{{ $t('stationManagement') }}</p>
         </div>
-      </div><div class="row">
+      </div>
+      <div class="row">
         <div class="sm-icon-card">
           <router-link :to="{name: 'EVConfiguration'}"><img src="@/assets/config_ev.png"></router-link>
           <p>{{ $t('evConfiguration') }}</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="sm-icon-card">
+          <router-link :to="{name: 'Repeater'}"><img src="@/assets/repeater.png"></router-link>
+          <p>{{ $t('repeaterConfiguration') }}</p>
         </div>
       </div>
     </div>
