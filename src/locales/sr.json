@@ -138,7 +138,7 @@
     "pulses": "Impulsi",
     "windSpeed": "Brzina Vetra",
     "evMaster": "Master Ventil",
-    "ecCommand": "Komanda Ventila",
+    "ecCommand": "Komanda Pumpe",
     "pumpDelay": "Kašnjenje Gašenja Pumpe",
     "flowAlarmDelay": "Kašnjenje Alarma Protoka",
     "stationDelay": "Razmak Između Sektora",
@@ -283,5 +283,10 @@
     "evConfiguration": "EV Configuration",
     "repeaterConfiguration": "Repeater Configuration",
     "repeaterNumber": "Repeater Number",
-    "repeaterCode": "Repeater Code"
+    "repeaterCode": "Repeater Code",
+    "maxPressureTransducer": "Transduktor maksimalnog pritiska na 20mA",
+    "humiditySensorSerialSetting": "Serijska postavka senzora vlažnosti",
+    "minimumPressureDelay": "Minimalno kašnjenje pritiska",
+    "maximumPressureDelay": "Maksimalno kašnjenje pritiska",
+    "choiceOfTimeMode": "Izbor vremenskog režima"
 }

@@ -138,7 +138,7 @@
     "pulses": "Impulsi",
     "windSpeed": "Velocita Vento",
     "evMaster": "Master Valvola",
-    "ecCommand": "Comando Valvola",
+    "ecCommand": "Comando Pompa",
     "pumpDelay": "Ritardo Disattivazione Pompa",
     "flowAlarmDelay": "Ritardo Allarme Flusso",
     "stationDelay": "Ritardo Tra Stazioni",
@@ -283,5 +283,10 @@
     "evConfiguration": "EV Configuration",
     "repeaterConfiguration": "Repeater Configuration",
     "repeaterNumber": "Repeater Number",
-    "repeaterCode": "Repeater Code"  
+    "repeaterCode": "Repeater Code",
+    "maxPressureTransducer": "Trasduttore di pressione max 20mA",
+    "humiditySensorSerialSetting": "Impostazione seriale sensore umidità",
+    "minimumPressureDelay": "Ritardo pressione minima",
+    "maximumPressureDelay": "Ritardo pressione massima",
+    "choiceOfTimeMode": "Scelta modalità tempo"
 }

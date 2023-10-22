@@ -138,7 +138,7 @@
     "pulses": "Pulses",
     "windSpeed": "Wind Speed",
     "evMaster": "EV Master",
-    "ecCommand": "EC Command",
+    "ecCommand": "Pump Command",
     "pumpDelay": "Pump Deactivation Delay",
     "flowAlarmDelay": "Flow Alarm Delay",
     "stationDelay": "Delay between Station",
@@ -283,5 +283,11 @@
     "evConfiguration": "EV Configuration",
     "repeaterConfiguration": "Repeater Configuration",
     "repeaterNumber": "Repeater Number",
-    "repeaterCode": "Repeater Code"
+    "repeaterCode": "Repeater Code",
+    "maxPressureTransducer": "Max pressure transducer at 20mA",
+    "humiditySensorSerialSetting": "Humidity Sensor Serial Setting",
+    "minimumPressureDelay": "Minimum pressure delay",
+    "maximumPressureDelay": "Maximum pressure delay",
+    "choiceOfTimeMode": "Choice of time mode"
+
 }
