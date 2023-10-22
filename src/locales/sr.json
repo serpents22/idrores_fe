@@ -288,5 +288,6 @@
     "humiditySensorSerialSetting": "Serijska postavka senzora vlažnosti",
     "minimumPressureDelay": "Minimalno kašnjenje pritiska",
     "maximumPressureDelay": "Maksimalno kašnjenje pritiska",
-    "choiceOfTimeMode": "Izbor vremenskog režima"
+    "choiceOfTimeMode": "Izbor vremenskog režima",
+    "waterBudget": "Water Budget"
 }

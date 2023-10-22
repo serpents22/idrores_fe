@@ -288,5 +288,6 @@
     "humiditySensorSerialSetting": "Impostazione seriale sensore umidità",
     "minimumPressureDelay": "Ritardo pressione minima",
     "maximumPressureDelay": "Ritardo pressione massima",
-    "choiceOfTimeMode": "Scelta modalità tempo"
+    "choiceOfTimeMode": "Scelta modalità tempo",
+    "waterBudget": "Water Budget"
 }

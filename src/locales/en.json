@@ -288,6 +288,7 @@
     "humiditySensorSerialSetting": "Humidity Sensor Serial Setting",
     "minimumPressureDelay": "Minimum pressure delay",
     "maximumPressureDelay": "Maximum pressure delay",
-    "choiceOfTimeMode": "Choice of time mode"
+    "choiceOfTimeMode": "Choice of time mode",
+    "waterBudget": "Water Budget"
 
 }

@@ -214,10 +214,17 @@
                   </span>
                 </td>
               </tr>
-              <tr>
-              <td class="field">
+             <tr>
+              <td class="field-title">
+                <span class="w-[360px] text-left font-semibold">{{ $t('waterBudget') }}</span>
+              </td>
+              <td class="field-title">
+              </td>
+            </tr>
+            <tr>
+              <td class="field" colspan="2">
                 <span class="mr-4">
-                  <label for="umidita-bassa">{{ $t('low') }} <sup>o</sup>C</label>
+                  <label for="umidita-bassa">{{ $t('low') }} %</label>
                 </span>
                 <input :max="250" v-model="programData.waterBudget" type="number" id="umidita-bassa">
               </td>
