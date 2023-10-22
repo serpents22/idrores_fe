@@ -402,13 +402,9 @@
   })
 
   const umiditaSliderValue = ref([0,0])
-  const umiditaBassa = ref()
-  const umiditaAlta = ref()
   const umiditaMin = 0
   const umiditaMax = 100
   const pressureSliderValue = ref([0,0])
-  const pressureBassa = ref()
-  const pressureAlta = ref()
   const pressureMin = 0
   const pressureMax = 50
 
