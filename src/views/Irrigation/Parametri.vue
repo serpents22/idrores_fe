@@ -70,7 +70,7 @@
               </tr>
               <tr>
                 <td>
-                  <label></label>
+                  <label>{{$t('choiceOfTimeMode')}}</label>
                 </td>
                 <td>
                   <span class="flex flex-col gap-1">
@@ -91,7 +91,7 @@
                   </span>
                 </td>
               </tr>
-              <tr>
+              <!-- <tr>
                 <td>
                   <label>{{$t('cyclesOrTime')}}</label>
                 </td>
@@ -113,7 +113,7 @@
                     </span>
                   </span>
                 </td>
-              </tr>
+              </tr> -->
               <tr>
                 <td>
                   <label>{{$t('delayBetweenStation')}}</label>
@@ -214,6 +214,21 @@
                   </span>
                 </td>
               </tr>
+              <tr>
+              <td class="field">
+                <span class="mr-4">
+                  <label for="umidita-bassa">{{ $t('low') }} <sup>o</sup>C</label>
+                </span>
+                <input :max="250" v-model="programData.waterBudget" type="number" id="umidita-bassa">
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2">
+                <div class="slider">
+                  <Slider v-model="programData.waterBudget" :min="0" :max="250" class="w-full"/>
+                </div>
+              </td>
+            </tr>
             </tbody>
           </table>
           <div class="button-wrapper">
@@ -233,13 +248,14 @@ import { defineAsyncComponent,  computed,  onMounted,  ref } from '@vue/runtime-
 import MyButton from '@/components/button/BaseButton.vue'
 import { functionsIn } from 'lodash';
 import { useI18n } from 'vue-i18n'
+import Slider from 'primevue/slider';
 
 const { t } = useI18n()
   //props
   const props = defineProps({
     id: String
   })
-  
+
   //asynchronus component
   const deviceCard = defineAsyncComponent(
     () => import('@/components/cards/deviceCard.vue'),
@@ -475,6 +491,7 @@ const { t } = useI18n()
     postSatConData.value.payload[cycleDelayRegister] = String(programData.value.cycleDelay)
     postSatConData.value.payload[miniFertRegister] = String(programData.value.miniFert)
     postSatConData.value.payload[remainingDaysRegister] = String(programData.value.remainingDays)
+    postSatConData.value.payload[waterBudgetRegister] = String(programData.value.waterBudget)
 
     console.log(postSatConData.value.payload)
     dataStore.postControl(satConfigParams.value.device_code,postSatConData.value)

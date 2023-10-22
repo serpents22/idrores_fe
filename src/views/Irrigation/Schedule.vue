@@ -62,10 +62,10 @@
           </router-link>
           <p>{{ $t('sensorsManagement') }}</p>
         </div>
-        <div class="sm-icon-card opacity-40" v-else>
+        <!-- <div class="sm-icon-card opacity-40" v-else>
           <img src="@/assets/gestisci_sensori.png" >
           <p>{{ $t('sensorsManagement') }}</p>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>
