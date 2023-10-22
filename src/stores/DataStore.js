@@ -30,6 +30,7 @@ export const useDataStore = defineStore('data', () => {
   const satStat = ref ([])
   const satStatIsLoading = ref(false)
   const gropointStat = ref ([])
+  const humiditySensorSerialSetting = ref ()
   const gropointStatIsLoading = ref(false)
   const gropointStatLength = ref()
   const icodConfig =ref ([])
@@ -102,6 +103,17 @@ export const useDataStore = defineStore('data', () => {
       return err
     } 
   }
+
+  const getHumiditySensorSerialSetting = async (params) => {
+    try {
+      const res = await dataAPI.getLast(params)
+      humiditySensorSerialSetting.value = res.data.data.M1200
+  } catch (err) {
+      console.error(err)
+      return err
+    } 
+  }
+
 
   const getLastEvConfig = async (params) => {
       evConfigIsLoading.value = true
@@ -291,6 +303,6 @@ export const useDataStore = defineStore('data', () => {
     pumpConfig, pumpConfigIsLoading, getLastPumpConfig, pumpConfigLength,
     mvConfig, mvConfigIsLoading, getLastMvConfig, mvConfigLength,gropointStatIsLoading, gropointStatLength,
     historicalData, historicalDataIsLoading, historicalDataLength, getHistoricalData, getLastGroupData, groupData, groupDataIsLoading,
-    repeaterData, repeaterDataLength, repeaterIsLoading, getLastRepeater
+    repeaterData, repeaterDataLength, repeaterIsLoading, getLastRepeater, humiditySensorSerialSetting, getHumiditySensorSerialSetting
   }
 })
