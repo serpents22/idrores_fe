@@ -15,23 +15,21 @@
   <div class="dashboard-container">
     <IdroTitle :title="title"/>
     <div class="content">
-      <div class="row">
-        <div class="sm-icon-card" v-if="devicesStore.deviceData.role !== 'user'">
-          <router-link  :to="{ name: 'Programma' }" >
-            <img src="@/assets/programma_partenze.png">
-          </router-link>
-          <p>{{ $t('scheduleStart') }}</p>
-        </div>
-        <div class="sm-icon-card opacity-40" v-else>
-          <img src="@/assets/programma_partenze.png" >
-          <p>{{ $t('scheduleStart') }}</p>
-        </div>
-        <div class="sm-icon-card">
-          <router-link :to="{ name: 'Avvio' }">
-            <img src="@/assets/avvio_manuale.png">
-          </router-link>
-          <p>{{ $t('manualStart') }}</p>
-        </div>
+      <div class="sm-icon-card" v-if="devicesStore.deviceData.role !== 'user'">
+        <router-link  :to="{ name: 'Programma' }" >
+          <img src="@/assets/programma_partenze.png">
+        </router-link>
+        <p>{{ $t('scheduleStart') }}</p>
+      </div>
+      <div class="sm-icon-card opacity-40" v-else>
+        <img src="@/assets/programma_partenze.png" >
+        <p>{{ $t('scheduleStart') }}</p>
+      </div>
+      <div class="sm-icon-card">
+        <router-link :to="{ name: 'Avvio' }">
+          <img src="@/assets/avvio_manuale.png">
+        </router-link>
+        <p>{{ $t('manualStart') }}</p>
       </div>
       <div class="row">
         <div class="sm-icon-card" v-if="devicesStore.deviceData.role !== 'user'">
