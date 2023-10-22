@@ -34,7 +34,7 @@
           </div>
           <div class="form">
             <div class="border-b-4 border-yellow-100 pb-4">
-              <div class="field-title">
+              <!-- <div class="field-title">
                 <span  class="w-[360px] text-left font-semibold">{{ $t('humidity') }}</span>
               </div>
               <div class="field-wrapper">
@@ -50,8 +50,8 @@
                   </span>
                   <input v-model="umiditaAlta" type="number" id="umidita-bassa" disabled>
                 </div>
-              </div>
-              <div class="slider">
+              </div> -->
+              <!-- <div class="slider">
                 <VueSlider 
                   @dragging="syncValues"
                   @click="syncValues"
@@ -59,7 +59,7 @@
                   :min="umiditaMin" 
                   :max="umiditaMax"
                   :enableCross="false" />
-              </div>
+              </div> -->
               <div class="field-wrapper">
                 <span class="w-[360px] flex">
                   <label for="sensora-umidita">{{ $t('humiditySensorType') }} :</label>
