@@ -17,6 +17,8 @@ import Vue3EasyDataTable from 'vue3-easy-data-table'
 import 'vue3-easy-data-table/dist/style.css'
 import JsonCSV from 'vue-json-csv'
 import i18n from './locales/i18n'
+import PrimeVue from 'primevue/config'
+import 'primevue/resources/themes/lara-light-teal/theme.css'
 
 const pinia = createPinia()
 const app = createApp(App)
@@ -25,6 +27,7 @@ const app = createApp(App)
 app.use(i18n)
 app.use(router)
 app.use(pinia)
+app.use(PrimeVue)
 // app.use(VueGoodTablePlugin)
 
 
