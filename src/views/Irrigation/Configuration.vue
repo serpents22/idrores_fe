@@ -20,8 +20,6 @@
           <router-link :to="{name: 'Orario'}"><img src="@/assets/imposta_orario.png"></router-link>
           <p>{{ $t('setTimeData') }}</p>
         </div>
-      </div>
-      <div class="row">
         <div class="sm-icon-card">
           <router-link :to="{name: 'Generali'}"><img src="@/assets/impostazioni_generali.png"></router-link>
           <p>{{ $t('generalSetting') }}</p>
@@ -38,8 +36,6 @@
           <router-link :to="{name: 'EVConfiguration'}"><img src="@/assets/config_ev.png"></router-link>
           <p>{{ $t('evConfiguration') }}</p>
         </div>
-      </div>
-      <div class="row">
         <div class="sm-icon-card">
           <router-link :to="{name: 'Repeater'}"><img src="@/assets/repeater.png"></router-link>
           <p>{{ $t('repeaterConfiguration') }}</p>

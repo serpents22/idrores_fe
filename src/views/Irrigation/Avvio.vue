@@ -73,7 +73,7 @@
                 </div>
               </span>
             </div>
-            <div class="field-wrapper">
+            <!-- <div class="field-wrapper">
               <span class="w-[320px] flex text-left font-semibold">
                 <label for="radiazione-solare">{{$t('skipStation')}} :</label>
               </span>
@@ -87,7 +87,7 @@
                     :loading="postControlIsLoading" />
                 </div>
               </span>
-            </div>
+            </div> -->
             <div class="prog-wrapper">
               <div class="toggle-wrapper" v-for="prog,index in progs" :key="prog">
                 <span class="font-semibold">prog{{index+1}}</span>

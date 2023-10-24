@@ -12,13 +12,13 @@
             <div class="modal-content">
             <h1 class="title">{{title}}</h1>
             <div class="mb-8 overflow-y-scroll h-80 text-[8px] sm:text-base">
-              <span class="grid grid-cols-5 text-start text-white mb-4 font-semibold">
+              <span class="grid grid-cols-5 text-start text-black mb-4 font-semibold">
                 <p class="col-span-1 text-center">Code</p>
                 <p class="col-span-1 text-center">{{ $t('program') }}</p>
                 <p class="col-span-1 text-center">{{ $t('station') }}</p>
                 <p class="col-span-2">Description</p>
               </span>
-              <span v-for="alarm in alarmsList" class="grid grid-cols-5 text-start text-white mb-2 border-b border-white">
+              <span v-for="alarm in alarmsList" class="grid grid-cols-5 text-start text-black mb-2 border-b border-black">
                 <p class="col-span-1 text-center">{{ alarm.code }}</p>
                 <p class="col-span-1 text-center">{{ alarm.program }}</p>
                 <p class="col-span-1 text-center">{{ alarm.station }}</p>
