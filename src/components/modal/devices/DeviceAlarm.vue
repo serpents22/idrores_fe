@@ -11,7 +11,7 @@
           <div class="modal-inner" v-show="isOpen" ref="target" >
             <div class="modal-content">
             <h1 class="title">{{title}}</h1>
-            <div class="mb-8 overflow-y-scroll h-80 text-[8px] sm:text-base">
+            <div class="mb-8 overflow-y-scroll h-80 text-[8px] sm:text-sm">
               <span class="grid grid-cols-5 text-start text-black mb-4 font-semibold">
                 <p class="col-span-1 text-center">Code</p>
                 <p class="col-span-1 text-center">{{ $t('program') }}</p>
@@ -25,7 +25,7 @@
                 <p class="col-span-2 mb-2">{{ alarm.description }}</p>
               </span>
             </div>
-            <BaseButton type="button" class="outlined"  :label="resetLabel" @click="onSubmit"/>
+            <BaseButton type="button" class="filled"  :label="resetLabel" @click="onSubmit"/>
           </div>
         </div>
       </transition>
@@ -88,7 +88,7 @@ import { useAlarmStore } from '@/stores/alarm/AlarmStore'
   .title {
     @apply 
       text-left border-b-[1px] pb-[18px] 
-      sm:text-2xl text-base font-normal text-white mb-6
+      sm:text-2xl text-base font-normal text-black mb-6
   }
   
 
@@ -104,10 +104,10 @@ import { useAlarmStore } from '@/stores/alarm/AlarmStore'
 .modal {
   @apply 
     bg-[#ABADAF]/20 backdrop-blur-sm
-    w-full h-full
+    w-full h-full 
     fixed top-0 left-0 px-8 pt-10 pb-4
     overflow-x-hidden overflow-y-auto z-40
-    flex 
+    flex justify-center items-center
 }
 
 .modal-inner {
