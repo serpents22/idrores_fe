@@ -105,9 +105,10 @@ export default {
         await this.dataStore.getLastSatStat(this.satStatParams)
         if (this.dataStore.satStat !== undefined) {
           let timeNow = new Date(Date.now())
-          this.S8 = new Date((this.dataStore.satStat.S8- 2 * 60 * 60) * 1000)
+          this.S8 = new Date((this.dataStore.satStat.S8) * 1000)
           let differsTime = Math.floor((timeNow - this.S8) / (1000 * 60))
-          this.content[index].device_time = new Date((this.dataStore.satStat.S8- 2 * 60 * 60) * 1000).toLocaleString()
+          console.log(this.S8, timeNow, differsTime)
+          this.content[index].device_time = new Date((this.dataStore.satStat.S8) * 1000).toLocaleString()
           if (differsTime > 2) {
             this.content[index].stato = false
           } else {
