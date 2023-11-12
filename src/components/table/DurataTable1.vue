@@ -753,7 +753,7 @@ const { t } = useI18n();
       let stationId = dataStore.evStation[orderRegister].split(',')[0];
       let stationStatus = dataStore.evStation[orderRegister].split(',')[1];
       
-      if(stationId > 0 && stationStatus > 0){
+      if(stationId > 0){
         console.log(step)
         var flowMode=getFlowValueByStep(step);
         
