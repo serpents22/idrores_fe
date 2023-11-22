@@ -117,7 +117,7 @@ const props = defineProps({
   <style scoped>
 
   .member-wrapper table {
-    @apply  w-full text-white text-left mt-4 text-[10px] sm:text-base
+    @apply  w-full text-black text-left mt-4 text-[10px] sm:text-base
   }
 .member-wrapper thead {
   @apply font-semibold h-16
@@ -127,7 +127,7 @@ const props = defineProps({
 }
 
   .title {
-    @apply text-left border-b-[1px] pb-[18px] text-[28px] font-normal text-white mb-4 sm:mb-10 text-base sm:text-xl
+    @apply text-left border-b-[1px] pb-[18px] text-[28px] font-normal text-black mb-4 sm:mb-10 text-base sm:text-xl
   }
   
 

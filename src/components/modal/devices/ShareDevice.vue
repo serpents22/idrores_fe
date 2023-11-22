@@ -27,7 +27,7 @@
                   </select> 
                 </div>
                 <div class="sm:flex-row flex-col flex justify-between gap-4 sm:gap-10"> 
-                  <BaseButton type="button" class="outlined"  :label="cancelLabel" @click="cancelForm"/>
+                  <BaseButton type="button" class="filled"  :label="cancelLabel" @click="cancelForm"/>
                   <BaseButton type="submit" class="filled"  :label="registerLabel" :loading="isLoading"   />
                 </div>
               </form>
@@ -136,7 +136,7 @@ const { t } = useI18n();
   <style scoped>
 
   .title {
-    @apply text-left border-b-[1px] pb-[18px] text-[28px] font-normal text-white mb-4 sm:mb-10 text-base sm:text-xl
+    @apply text-left border-b-[1px] pb-[18px] text-[28px] font-normal text-black mb-4 sm:mb-10 text-base sm:text-xl
   }
   
 

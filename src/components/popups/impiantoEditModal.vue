@@ -24,10 +24,10 @@
             </Field>
           </div>
           <div class="w-[300px]">
-            <iveText :placeholder="$t('name')" name="name" type="text" class="text-field"/>
+            <BaseInput :placeholder="$t('name')" name="name" type="text" class="white"/>
           </div>
           <div class="w-[300px]">
-            <iveButton type="submit" class="filled"   :label="$t('save')"/>
+            <iveButton type="submit" class="filled" :label="$t('save')"/>
           </div>
         </div>
       </form>
@@ -37,6 +37,7 @@
 </template>
 
 <script >
+import BaseInput from '@/components/input/NewInput.vue'
 import iveText from '@/components/input/inputBase.vue'
 import iveButton from '@/components/button/BaseButton.vue'
 import { Form as VeeForm, Field, ErrorMessage } from 'vee-validate'
@@ -49,7 +50,7 @@ import { ref } from 'vue'
 
 export default {
   components: {
-    iveText, iveButton,  VeeForm, Field, ErrorMessage
+    iveText, iveButton,  VeeForm, Field, ErrorMessage, BaseInput
   },
   props:[
     'title'
@@ -106,8 +107,16 @@ export default {
 </script>
 
 <style scoped>
+
+
+.select-option {
+  @apply  px-2 py-1 sm:px-3 sm:py-2 
+          rounded-lg border bg-white
+          text-[12px] sm:text-base
+} 
+
 .dropdown {
-  @apply pl-2 rounded py-3 cursor-pointer w-full text-gray-900
+  @apply pl-2 rounded py-3 cursor-pointer w-full text-gray-900 border
 }
 #modal-backdrop {
   @apply  bg-[#ABADAF]/20

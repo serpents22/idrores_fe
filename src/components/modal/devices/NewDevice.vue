@@ -20,7 +20,7 @@
                 <!-- <BaseInput name="max_devices" type="number" placeholder="Max devices" class="white" label="Max Devices"/> -->
                 <BaseInput name="coordinate" type="text" placeholder="GPS Location" class="white" label="GPS Location"/>
                 <div class="sm:flex-row flex-col flex justify-between gap-6 sm:gap-10"> 
-                  <BaseButton type="button" class="outlined"  :label="cancelLabel" @click="cancelForm"/>
+                  <BaseButton type="button" class="filled"  :label="cancelLabel" @click="cancelForm"/>
                   <BaseButton type="submit" class="filled"  :label="registerLabel" :loading="createDeviceIsLoading"   />
                 </div>
               </form>
@@ -127,10 +127,8 @@ const { t } = useI18n();
   
   <style scoped>
 
-  .title {
-    @apply 
-      text-left border-b-[1px] pb-[18px] 
-      sm:text-2xl text-base font-normal text-white mb-6
+.title {
+    @apply text-left border-b-[1px] pb-[18px] text-[28px] font-normal text-black mb-4 sm:mb-10 text-base sm:text-xl
   }
   
 
@@ -147,9 +145,9 @@ const { t } = useI18n();
   @apply 
     bg-[#ABADAF]/20 backdrop-blur-sm
     w-full h-full
-    fixed top-0 left-0 px-8 pt-10 pb-4
+    fixed top-0 left-0 px-8 py-10
     overflow-x-hidden overflow-y-auto z-40
-    flex 
+    justify-center items-center flex
 }
 
 .modal-inner {
@@ -185,9 +183,9 @@ const { t } = useI18n();
 }
 
 .select-option {
-  @apply  px-3 py-2
+  @apply  px-2 py-1 sm:px-3 sm:py-2 
           rounded-lg border bg-white
-          text-[14px]
+          text-[12px] sm:text-base
 } 
 
   
