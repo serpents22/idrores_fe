@@ -74,6 +74,22 @@ export const useAuthStore = defineStore('auth', {
 
     },
 
+    async deleteAccount(data) {
+      this.isLoading = true
+      try {
+        const res = await authAPI.deleteAccount(data)
+        this.isLoading = false
+        this.status.message = 'Password reset email successfully sent'
+        localStorage.removeItem('auth.token');
+        localStorage.removeItem('auth.user')
+        router.push({ name: 'LoginForm' });
+      } catch (err) {
+        this.isLoading = false
+        this.status.message = "Account deletion failed"
+        return err
+      }
+    },
+
     async forgotPassword(data) {
 
       this.isLoading = true

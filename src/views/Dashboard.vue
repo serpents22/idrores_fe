@@ -8,6 +8,10 @@
       <IdroTitle :title="$t('welcomeText')"/>
       <div class="menu">
         <div class="icon-card">
+          <router-link :to="{name: 'ManageAccount'}"><img src="../assets/account.png"></router-link>
+          <p>{{ $t('accountManagement') }}</p>
+        </div>
+        <div class="icon-card">
           <router-link :to="{name: 'DevicesList'}"><img src="../assets/impianto.png"></router-link>
           <p>{{ $t('plantManagement') }}</p>
         </div>

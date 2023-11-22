@@ -16,6 +16,9 @@ export default {
   signOut() {
     return apiClient.get('logout',config)
   },
+  deleteAccount(data) {
+    return apiClient.post(`user/remove/`,data)
+  },
   forgotPassword(data,lang) {
     return apiClient.post(`forgot-password/${lang}`,data)
   },

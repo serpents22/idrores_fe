@@ -3,6 +3,11 @@
   <div class="slider"></div>
   <loading :loading="isLoading" />
 
+  <DeleteAccount
+    :isOpen="isShowDeleteAccount"
+    @close="toggleDeleteAccount" 
+    title="Delete Account"
+  />
   <ShareDevice
     :isOpen="isShowAddRole"
     @close="toggleAddRole" 
@@ -27,6 +32,9 @@
       <div class="managerole" @click="toggleManageRole">
         <span>{{$t('manageRule')}}</span>
       </div>
+      <div class="addrole" @click="toggleDeleteAccount">
+        <span>Delete Account</span>
+      </div>
     </div>
   </div>
 </template>
@@ -34,6 +42,7 @@
 <script setup>
 import { useDeviceManagement } from '@/stores/DeviceManagementStore'
 import { ref } from '@vue/runtime-core'
+import DeleteAccount from '@/components/modal/DeleteAccount'
 import ShareDevice from '@/components/modal/devices/ShareDevice'
 import ManageShare from '@/components/modal/devices/ManageShare'
 import { onMounted } from 'vue'
@@ -46,9 +55,13 @@ const deviceManagementStore = useDeviceManagement()
   //init store
   const title = 'Gestisci account'
   //function
+  const isShowDeleteAccount = ref(false)
   const isShowAddRole = ref(false)
   const isShowManageRole = ref(false)
 
+  function toggleDeleteAccount() {
+    isShowDeleteAccount.value = !isShowDeleteAccount.value
+  }
   function toggleAddRole() {
     isShowAddRole.value = !isShowAddRole.value
   }
