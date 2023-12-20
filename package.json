@@ -31,6 +31,7 @@
     "vue-slider-component": "^4.1.0-beta.2",
     "vue3-easy-data-table": "^1.5.45",
     "vue3-google-map": "^0.17.0",
+    "vuedraggable": "^4.1.0",
     "yup": "^0.32.11"
   },
   "devDependencies": {
