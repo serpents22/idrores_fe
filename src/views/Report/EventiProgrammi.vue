@@ -227,9 +227,9 @@ const {t} = useI18n()
     { text: "Date Time", value: "date",sortable: true, width: 120},
     { text: t('irrigationTime'), value: "durataIrrigazione",sortable: true, width: 80},
     { text: t('programStatus'), value: "stato",sortable: true, width: 80},
-    { text:  t('pump') +' 1', value: "pompa1",sortable: true, width: 80},
-    { text:  t('master') +' 1', value: "master1",sortable: true, width: 80},
     { text:  t('counter') +' 1', value: "contatore1",sortable: true, width: 80},
+    { text:  t('pump') +' 1', value: "pompa1",sortable: true, width: 80},
+    { text:  t('evMaster') +' 1', value: "master1",sortable: true, width: 80},
   ]
     
     
