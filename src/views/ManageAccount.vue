@@ -86,7 +86,7 @@ span p {
   background: linear-gradient(45.06deg, #FFFFFF -8.2%, #FFFFFF 108.15%);
   border: 3px solid #000000;
   padding: 20px;
-  @apply text-white font-medium rounded-lg w-60
+  @apply text-black font-medium rounded-lg w-60
   /* border: 1px solid #031ac4;
     width: 25%;
     padding: 50px;
