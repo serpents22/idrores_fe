@@ -2,14 +2,15 @@ import axios from "axios";
 import apiClient from "./API";
 
 
+let params = {company: "idrores"}
 
 export default {
   getDevices() {
-    return apiClient.get('device')
+    return apiClient.get('device', {params})
   },
 
   getDevice(id) {
-    return apiClient.get(`device/${id}`)
+    return apiClient.get(`device/${id}`, {params})
   },
 
   postDevices(data) {

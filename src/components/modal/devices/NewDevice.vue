@@ -67,6 +67,7 @@ const { t } = useI18n();
 
   const onSubmit = async (values, { resetForm }) => {
     console.log(values)
+    values.company = 'idrores'
     regButtonClick.value = ++regButtonClick.value
     if (regButtonClick.value == 1) {
       registerLabel.value = t('dataCorrect')
