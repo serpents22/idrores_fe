@@ -144,6 +144,7 @@ input[type=number] {
     font-medium text-[6px] sm:text-[8px] md:text-[10px] lg:text-[12px] xl:text-[14px]
     break-words
     cursor-default
+    line-clamp-2
 }
 
 .xs-icon-card {
@@ -163,14 +164,16 @@ input[type=number] {
 }
 .xs-icon-card img {
   @apply 
-  px-2 sm:px-3 md:px-4 lg:px-6
+  px-3 sm:px-3 md:px-4 lg:px-6
   object-contain
 }
 
 .xs-icon-card p {
   @apply 
     text-black 
-    font-poppins font-semibold text-[5px] sm:text-[6px] md:text-[8px] lg:text-[12px]
+    font-poppins font-semibold 
+    lowercase
+    text-[2px] sm:text-[6px] md:text-[8px] lg:text-[12px]
     break-words pointer-events-none
     px-2
 }

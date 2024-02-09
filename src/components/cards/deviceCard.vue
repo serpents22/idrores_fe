@@ -218,12 +218,12 @@ export default {
     md:px-[20px] md:py-[10px]
     xl:px-[30px] xl:py-[10px]
     2xl:px-[40px] 2xl:py-[10px]
-    w-[120px] h-[150px]
+    w-[150px] h-[190px]
     sm:w-[150px] sm:h-[190px] 
     md:w-[150px] md:h-[210px] 
     lg:w-[240px] lg:h-[300px] 
     xl:w-[280px] xl:h-[320px]
-    2xl:w-[320px] xl:h-[362px]
+    2xl:w-[320px] 2xl:h-[362px]
     rounded-[20px] sm:rounded-[30px] md:rounded-[30px] lg:rounded-[50px] xl:rounded-[60px]
     transition-transform duration-200 ease-in-out transform
 }
