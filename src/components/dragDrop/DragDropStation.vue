@@ -526,7 +526,7 @@ function onMobileMove(event) {
     if (action == 'addRowToNewGroup') { // adding new row to new group
         newGroup.value = JSON.parse(to.getAttribute('data-new-group'))
         dragAction.value = 'addRowToNewGroup'
-    } if (action  == 'moveCellToList') { // moving cell to list
+    } else if (action  == 'moveCellToList') { // moving cell to list
         dragAction.value = 'moveCellToList'
     } else {
         dragAction.value = null
