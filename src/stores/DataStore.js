@@ -303,6 +303,6 @@ export const useDataStore = defineStore('data', () => {
     pumpConfig, pumpConfigIsLoading, getLastPumpConfig, pumpConfigLength,
     mvConfig, mvConfigIsLoading, getLastMvConfig, mvConfigLength,gropointStatIsLoading, gropointStatLength,
     historicalData, historicalDataIsLoading, historicalDataLength, getHistoricalData, getLastGroupData, groupData, groupDataIsLoading,
-    repeaterData, repeaterDataLength, repeaterIsLoading, getLastRepeater, humiditySensorSerialSetting, getHumiditySensorSerialSetting
+    repeaterData, repeaterDataLength, repeaterIsLoading, getLastRepeater, humiditySensorSerialSetting, getHumiditySensorSerialSetting, groupDataLength
   }
 })
