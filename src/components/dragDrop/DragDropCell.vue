@@ -14,6 +14,7 @@
       :data-cell-type="cell"
       :data-row="JSON.stringify(item)"
       v-bind="dragOptions"
+      :data-action="dataAction"
     >
       <template #item="{element}">
         <span class="itemCell" :class="{canDrop, cannotDrop}" >
@@ -58,6 +59,10 @@
     itemIndexAsValue: {
       type: Boolean,
       default: false
+    },
+    dataAction: { // used to handle cell drop from card to list, but cell is dropped on top of cell in list
+      type: String,
+      default: ''
     }
   })
 

@@ -41,6 +41,7 @@
                             :getFormattedItemCell="getFormattedItemCell"
                             :getCellKey="getCellKey"
                             :draggedCellType="draggedCellType"
+                            dataAction="moveCellToListOnTopOfCell"
                             @start-drag="startDrag"
                             @mobile-move="onMobileMove"
                             @mobile-end="onMobileEnd"
@@ -80,6 +81,7 @@
                             :getCellKey="getCellKey"
                             :draggedCellType="draggedCellType"
                             :itemIndexAsValue="true"
+                            dataAction="moveCellToListOnTopOfCell"
                             @start-drag="startDrag"
                             @mobile-move="onMobileMove"
                             @mobile-end="onMobileEnd"
@@ -119,6 +121,7 @@
                             :getCellKey="getCellKey"
                             :draggedCellType="draggedCellType"
                             :itemIndexAsValue="true"
+                            dataAction="moveCellToListOnTopOfCell"
                             @start-drag="startDrag"
                             @mobile-move="onMobileMove"
                             @mobile-end="onMobileEnd"
@@ -513,7 +516,6 @@ function onMobileMove(event) {
 
     // cell type must be the same
     if (fromCellType != toCellType) {
-        console.log('cell type must be the same', fromCellType, toCellType)
         return false; // cancel move
     }
 
@@ -528,8 +530,10 @@ function onMobileMove(event) {
         dragAction.value = 'addRowToNewGroup'
     } else if (action  == 'moveCellToList') { // moving cell to list
         dragAction.value = 'moveCellToList'
+    } else if (action == 'moveCellToListOnTopOfCell') {
+        dragAction.value = 'moveCellToListOnTopOfCell'
     } else {
-        dragAction.value = null
+        dragAction.value = null;
     }
 
     return false; // disable sort
@@ -545,6 +549,10 @@ function onMobileEnd() {
 
     // stopped on list
     if (dragAction.value == 'moveCellToList') {
+        moveCellToList(currentCellType.value)
+        endDrag()
+        return
+    } else if (dragAction.value == 'moveCellToListOnTopOfCell') {
         moveCellToList(currentCellType.value)
         endDrag()
         return
@@ -584,6 +592,7 @@ function endDrag() {
 }
 
 function onDrop(currentCellType, currentStazione, currentItem) {
+    console.log('ondrop', currentItem)
     let draggedId = draggedCell.value.id
     let draggedCellType = draggedCell.value.cellType
     let draggedStazione = draggedCell.value.stazione
