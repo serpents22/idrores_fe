@@ -2,7 +2,7 @@ import axios from "axios";
 import apiClient from "./API";
 
 
-let params = {company: "idrolife"}
+let params = {company: "idrores"}
 
 export default {
   getDevices() {
