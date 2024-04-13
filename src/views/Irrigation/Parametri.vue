@@ -64,28 +64,7 @@
               </tr>
               <tr>
                 <td>
-                  <label>{{ $t('minifertProgram') }}</label>
-                </td>
-                <td>
-                  <span>
-                    <select :disabled="programData.miniFert === undefined" v-model="programData.miniFert"
-                      name="funzionamento-impianto" class="dropdown">
-                      <option value="0">OFF</option>
-                      <option value="1">1</option>
-                      <option value="2">2</option>
-                      <option value="3">3</option>
-                      <option value="4">4</option>
-                      <option value="5">5</option>
-                      <option value="6">6</option>
-                      <option value="7">7</option>
-                      <option value="8">8</option>
-                    </select>
-                  </span>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <label></label>
+                  <label>{{$t('choiceOfTimeMode')}}</label>
                 </td>
                 <td>
                   <span class="flex flex-col gap-1">
@@ -184,7 +163,7 @@
                         {{ biWeekCalendar[giorno - 1].day }}
                       </div>
                     </div>
-                    <div class="week-container">
+                    <!-- <div class="week-container">
                       <label>{{ $t('firstWeek') }}</label>
                       <div name="days-container" v-for="giorno in 7" :key="giorno">
                         <input type="checkbox" :disabled="programData.pauseWeekMode != 0"
@@ -192,7 +171,7 @@
                           :checked="biWeekCalendar[(giorno + 7) - 1].status == 1"
                           :value="biWeekCalendar[(giorno + 7) - 1].status"> {{ biWeekCalendar[(giorno + 7) - 1].day }}
                       </div>
-                    </div>
+                    </div> -->
                   </div>
                 </td>
               </tr>
